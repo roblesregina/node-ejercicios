@@ -1,5 +1,6 @@
 const http = require("http");
 const personas = require("./personas");
+console.log(personas);
 
 const server = http.createServer((req, res) => {
   console.log("Alguien accedió al servidor");
@@ -15,4 +16,6 @@ const server = http.createServer((req, res) => {
   res.end(JSON.stringify(personasPares));
 });
 
-server.listen(8000);
+server.listen(8000, () => {
+  console.log("Servidor escuchando en http://localhost:8000");
+});
